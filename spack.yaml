@@ -15,7 +15,7 @@ spack:
   - current_compiler:
     - gcc@11.5.0 +bootstrap -nvptx
   - gcc_compiler:
-    - gcc@13.4.0 -bootstrap +nvptx
+    - gcc@15.2.0 -bootstrap +nvptx
   - othertools:
     - binutils +ld +gas -gold
     - git

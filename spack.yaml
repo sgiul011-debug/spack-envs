@@ -44,6 +44,29 @@ spack:
     - emacs
     - curl
     - gdbm    
+  - system_externals:
+    - knem
+    - hwloc
+    - libevent
+    - lustre
+    - openssl
+    - rdma-core
+    - slurm
+  - intel_libraries:
+    - intel-oneapi-ipp
+    - intel-oneapi-tbb
+    - intel-oneapi-mkl+cluster
+    - intel-oneapi-mpi
+    - intel-oneapi-inspector
+    - intel-oneapi-advisor
+    - intel-oneapi-itac
+    - intel-oneapi-vtune
+  - cuda_compiler:
+    - cuda@12.6.0+compat+cupti+samples~full 
+  - intel-oneapi-compilers:
+    - intel-oneapi-compilers@2025.3.1
+  - nvhpc_compiler:
+    - nvhpc@25.11   
   - all: 
     - $autotools
     - $cmaketools
@@ -53,6 +76,11 @@ spack:
     - $common_tools  
     - $gcc_compiler
   - out_of_matrix:
+    - $system_externals
+    - $intel_libraries
+    - $cuda_compiler
+    - $intel-oneapi-compilers
+    - $nvhpc_compiler
     - $cuda_compiler
   specs:
   - matrix:

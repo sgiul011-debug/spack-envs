@@ -81,7 +81,6 @@ spack:
     - $cuda_compiler
     - $intel-oneapi-compilers
     - $nvhpc_compiler
-    - $cuda_compiler
   specs:
   - matrix:
     - - $all

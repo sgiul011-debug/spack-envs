@@ -54,6 +54,8 @@ spack:
     - slurm
   - cuda_compiler:
     - cuda@12.6.0+compat+cupti+samples~full 
+  - zlib-ng:
+    - zlib-ng  
   - all: 
     - $autotools
     - $cmaketools
@@ -65,6 +67,7 @@ spack:
   - out_of_matrix:
     - $system_externals
     - $cuda_compiler
+    - $zlib-ng
   specs:
   - matrix:
     - - $all

@@ -1,0 +1,29 @@
+spack:
+  concretizer:
+    unify: true
+    reuse: true
+  packages:
+    all:
+      require: target=icelake
+      variants:
+      - +cuda
+      - cuda_arch=90
+  modules:
+    default:
+      enable: []
+  definitions:
+  - current_compiler:
+    - gcc@11.5.0 +bootstrap -nvptx
+  - gcc_compiler:
+    - gcc@13.4.0 -bootstrap +nvptx
+  - all:
+    - $gcc_compiler
+  - out_of_matrix:
+    - $cuda_compiler
+  specs:
+  - matrix:
+    - - $all
+    - - $%current_compiler
+  - $out_of_matrix
+  view: false
+

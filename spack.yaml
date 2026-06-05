@@ -64,10 +64,10 @@ spack:
     - $assemblers
     - $common_tools  
     - $gcc_compiler
+    - $zlib-ng
   - out_of_matrix:
     - $system_externals
     - $cuda_compiler
-    - $zlib-ng
   specs:
   - matrix:
     - - $all

@@ -16,6 +16,8 @@ spack:
     - gcc@11.5.0 +bootstrap -nvptx
   - gcc_compiler:
     - gcc@15.2.0 -bootstrap +nvptx
+  - zlib-ng:
+    - zlib-ng  
   - othertools:
     - binutils +ld +gas -gold
     - git
@@ -54,8 +56,6 @@ spack:
     - slurm
   - cuda_compiler:
     - cuda@12.6.0+compat+cupti+samples~full 
-  - zlib-ng:
-    - zlib-ng  
   - all: 
     - $autotools
     - $cmaketools

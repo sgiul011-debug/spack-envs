@@ -16,7 +16,41 @@ spack:
     - gcc@11.5.0 +bootstrap -nvptx
   - gcc_compiler:
     - gcc@13.4.0 -bootstrap +nvptx
-  - all:
+  - othertools:
+    - binutils +ld +gas -gold
+    - git
+    - perl
+    - patchelf
+    - guile
+    - sqlite
+  - utils:
+    - libtool
+    - bison
+    - diffutils
+    - pkgconf
+  - assemblers:
+    - nasm
+    - yasm
+  - autotools:
+    - automake
+    - m4
+    - texinfo
+    - gmake
+  - cmaketools:
+    - cmake
+    - ninja
+  - common_tools:
+    - python
+    - emacs
+    - curl
+    - gdbm    
+  - all: 
+    - $autotools
+    - $cmaketools
+    - $othertools
+    - $utils
+    - $assemblers
+    - $common_tools  
     - $gcc_compiler
   - out_of_matrix:
     - $cuda_compiler

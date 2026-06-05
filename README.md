@@ -1,2 +1,2 @@
 # spack-envs
-This repository is for testing spack envs git organization
+This repository contains the spack.yaml to define the specs of tools, utils, assemblers and compilers packages to be installed with system gcc and to define the external system installations 

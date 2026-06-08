@@ -1,2 +1,2 @@
 # spack-envs
-This repository contains the spack.yaml that defines the specs of cuda@13 and gcc@15 to be installed
+This repository contains the spack.yaml that defines the specs of libraries, tools and applications to be installed in the serial version, with gcc compiler, cuda@13 anf icelake target.

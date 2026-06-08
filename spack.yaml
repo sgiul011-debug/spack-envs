@@ -4,7 +4,6 @@ spack:
     reuse: true
   packages:
     all:
-      require: target=icelake
       variants:
       - +cuda
       - cuda_arch=90

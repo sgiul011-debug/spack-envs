@@ -16,10 +16,57 @@ spack:
     - 'gcc@15.2.0 ~bootstrap+nvptx'
   - cuda_compiler:
     - cuda@13.0.2+compat+cupti+samples~full samples_arch=90   
+  - openssl:
+    - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
+  - zlib-api:
+    - zlib-ng
+  - libraries:
+    - boost +container
+    - hdf5 +cxx -mpi -threadsafe
+    - metis
+    - netcdf-c -mpi
+    - netcdf-fortran
+    - libszip
+    - cgal  
+    - libmatheval
+    - cfitsio
+  - profilers:
+    - hpctoolkit
+  - tools:
+    - proj
+    - gdal +python
+    - gmt +ffmpeg  ^json-c +ipo
+    - cdo
+    - eccodes
+  - blitz:
+    - blitz
+  - applications_gromacs:
+    - gromacs@2026.0 ~mpi+openmp~plumed
+    - gsl +external-cblas
+  - applications_namd:
+    - namd@3.0.2 +single_node_gpu interface=tcl
+    - charmpp backend=multicore build-target=charm++
+  - libraries_specific:
+    - openblas  -ilp64 threads=openmp
+    - fftw -mpi
+  - gpu_no_bin:
+    - cutensor
+  - gpu_bin:
+    - libxc ~cuda
+    - nccl@2.29.2-1    
   - all:
-    - $gcc_compiler
+    - $libraries
+    - $tools
+    - $blitz
+    - $applications_gromacs
+    - $applications_namd
+    - $libraries_specific
+    - $gpu_bin
   - out_of_matrix:
     - $cuda_compiler
+    - $openssl
+    - $zlib-api
+    - $gpu_no_bin
   specs:
   - matrix:
     - - $all

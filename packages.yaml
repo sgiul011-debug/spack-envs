@@ -3,4 +3,11 @@ packages:
     require: target=icelake
     variants:
     - cuda_arch=90
+  cuda:
+    require:
+    - "@13.0.2"
+    - +compat
+    - +cupti
+    - +samples~full 
+    - samples_arch=90
   

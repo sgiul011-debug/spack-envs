@@ -1,4 +1,8 @@
 spack:
+  packages:
+    all:
+      variants:
+      - +cuda
   definitions:
   - current_compiler:
     - gcc@11.5.0 +bootstrap -nvptx

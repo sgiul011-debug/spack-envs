@@ -5,7 +5,7 @@ spack:
       - +cuda
   definitions:
   - cuda_compiler:
-    - cuda@13.0.2+compat+cupti+samples~full samples_arch=90   
+    - cuda
   specs:
   - $cuda_compiler
   view: false

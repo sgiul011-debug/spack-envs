@@ -16,7 +16,7 @@ spack:
     - gcc@11.5.0 +bootstrap -nvptx
   - gcc_compiler:
     - gcc@15.2.0 -bootstrap +nvptx
-  - zlib-ng:
+  - zlib-api:
     - zlib-ng  
   - othertools:
     - binutils +ld +gas -gold

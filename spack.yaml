@@ -4,20 +4,9 @@ spack:
       variants:
       - +cuda
   definitions:
-  - current_compiler:
-    - gcc@11.5.0 +bootstrap -nvptx
-  - gcc_compiler:
-    - gcc@15.2.0 -bootstrap +nvptx  
   - cuda_compiler:
     - cuda@13.0.2+compat+cupti+samples~full samples_arch=90   
-  - all:
-    - $gcc_compiler
-  - out_of_matrix:
-    - $cuda_compiler
   specs:
-  - matrix:
-    - - $all
-    - - $%current_compiler
-  - $out_of_matrix
+  - $cuda_compiler
   view: false
 

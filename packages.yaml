@@ -3,5 +3,4 @@ packages:
     require: target=icelake
     variants:
     - cuda_arch=90
-    - +cuda
   

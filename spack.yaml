@@ -4,83 +4,39 @@ spack:
   - lisa/packages.yaml
   - packages.yaml
   - concretizer.yaml
-  definitions:
-  - current_compiler:
-    - gcc
+  definitions:
+  - current_compiler:
+    - gcc@11.5.0 +bootstrap -nvptx
+  - openssl:
+    - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
+  - cuda:
+    - cuda@13.0.2 +compat+cupti+samples~full samples_arch=90
   - zlib-api:
-    - zlib-ng  
-  - othertools:
-    - binutils +ld +gas -gold
-    - git
-    - perl
-    - patchelf
-    - guile
-    - sqlite
-  - utils:
-    - libtool
-    - bison
-    - diffutils
-    - pkgconf
-  - assemblers:
-    - nasm
-    - yasm
-  - autotools:
-    - automake
-    - m4
-    - texinfo
-    - gmake
-  - cmaketools:
-    - cmake
-    - ninja
-  - common_tools:
-    - python
-    - emacs
-    - curl
-    - gdbm    
-  - system_externals:
-    - knem
-    - pmix
-    - hwloc
-    - libevent
-    - lustre
-    - openssl
-    - rdma-core
-    - slurm
-  - intel_libraries:
-    - intel-oneapi-ipp
-    - intel-oneapi-tbb
-    - intel-oneapi-mkl+cluster
-    - intel-oneapi-mpi
-    - intel-oneapi-inspector
-    - intel-oneapi-advisor
-    - intel-oneapi-itac
-    - intel-oneapi-vtune
-  - gcc_compiler:
-    - gcc
-  - intel-oneapi-compilers:
-    - intel-oneapi-compilers@2025.3.2
-  - nvhpc_compiler:
-    - nvhpc@25.11
-  - cuda_compiler:
-    - cuda
-  - all: 
-    - $autotools
-    - $cmaketools
-    - $othertools
-    - $utils
-    - $assemblers
-    - $common_tools  
-    - $gcc_compiler
-    - $intel-oneapi-compilers
-    - $nvhpc_compiler
-    - $zlib-api
-  - out_of_matrix:
-    - $system_externals
-    - $cuda_compiler
-  specs:
-  - matrix:
-    - - $all
-    - - $%current_compiler
-  - $out_of_matrix
-  view: false
-
+    - zlib-ng
+  - ba_requirements:
+    - tcl
+    - environment-modules
+  - cmake_tools:
+    - cmake 
+  - python_tools:
+    - python@3.14
+  - compilers:
+    - intel-oneapi-compilers-classic
+    - llvm@21.1.4 +clang +flang ~cuda ~offload ~libomptarget %c,cxx=gcc
+  - binary_libraries:
+    - intel-oneapi-mkl~cluster
+    - nag-library@27
+  - java_tools:
+    - maven
+  - transfer_tools:
+    - ncftp
+  - singularity_tools:
+    - singularityce
+  - testing_tools:
+    - jube
+    - py-ruamel-yaml
+    - snakemake
+  - applications_star-ccm-plus:
+    - star-ccm-plus
+  - tools_idl:
+    - idl@8.5

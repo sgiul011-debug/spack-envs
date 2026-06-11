@@ -1,6 +1,7 @@
 spack:
   include:
   - cuda/packages.yaml
+  - lisa/packages.yaml
   - packages.yaml
   - concretizer.yaml
   definitions:

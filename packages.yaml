@@ -3,3 +3,7 @@ packages:
   - -mpi
   compiler:
   - gcc@11.5.0 +bootstrap -nvptx
+  intel-oneapi-compilers:
+    spec: intel-oneapi-compilers@2025.3.2
+  nvhpc_compiler:
+    version:: nvhpc@25.11

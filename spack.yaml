@@ -1,16 +1,8 @@
 spack:
-  concretizer:
-    unify: true
-    reuse: true
-  packages:
-    all:
-      require: target=icelake
-      variants:
-      - +cuda
-      - cuda_arch=90
-  modules:
-    default:
-      enable: []
+  include:
+  - cuda/packages.yaml
+  - packages.yaml
+  - concretizer.yaml
   definitions:
   - current_compiler:
     - gcc@11.5.0 +bootstrap -nvptx

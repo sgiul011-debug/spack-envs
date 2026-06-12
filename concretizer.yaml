@@ -1,1 +1,4 @@
+  concretizer:
+    unify: true
+    reuse: true
 

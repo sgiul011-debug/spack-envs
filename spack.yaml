@@ -20,7 +20,7 @@ spack:
     - python@3.14
   - compilers:
     - intel-oneapi-compilers-classic
-    - llvm@21.1.4 +clang +flang ~cuda ~offload ~libomptarget %c,cxx=gcc
+    - llvm+clang +flang ~cuda ~offload ~libomptarget %c,cxx=gcc
   - binary_libraries:
     - intel-oneapi-mkl~cluster
     - nag-library@27

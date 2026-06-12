@@ -5,6 +5,15 @@ spack:
   definitions:
   - current_compiler:
     - gcc
+  - system_externals:
+    - knem
+    - pmix
+    - hwloc
+    - libevent
+    - lustre
+    - openssl
+    - rdma-core
+    - slurm  
   - zlib-api:
     - zlib-ng  
   - othertools:
@@ -35,15 +44,6 @@ spack:
     - emacs
     - curl
     - gdbm    
-  - system_externals:
-    - knem
-    - pmix
-    - hwloc
-    - libevent
-    - lustre
-    - openssl
-    - rdma-core
-    - slurm
   - intel_libraries:
     - intel-oneapi-ipp
     - intel-oneapi-tbb

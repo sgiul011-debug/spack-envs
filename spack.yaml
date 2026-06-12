@@ -4,11 +4,11 @@ spack:
   - concretizer.yaml
   definitions:
   - current_compiler:
-    - gcc@11.5.0 +bootstrap -nvptx
+    - gcc
   - openssl:
     - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
   - cuda:
-    - cuda@13.0.2 +compat+cupti+samples~full samples_arch=90
+    - cuda
   - zlib-api:
     - zlib-ng
   - ba_requirements:
@@ -17,7 +17,7 @@ spack:
   - cmake_tools:
     - cmake 
   - python_tools:
-    - python@3.14
+    - python
   - compilers:
     - intel-oneapi-compilers-classic
     - llvm+clang +flang ~cuda ~offload ~libomptarget %c,cxx=gcc

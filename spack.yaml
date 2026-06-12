@@ -1,21 +1,9 @@
 spack:
-  concretizer:
-    unify: true
-    reuse: true
-  packages:
-    all:
-      require: target=icelake
-      variants:
-      - +cuda
-      - cuda_arch=90
-  modules:
-    default:
-      enable: []
   definitions:
   - current_compiler:
-    - 'gcc@15.2.0 ~bootstrap+nvptx'
+    - 'gcc'
   - cuda_compiler:
-    - cuda@13.0.2+compat+cupti+samples~full samples_arch=90   
+    - cuda   
   - openssl:
     - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
   - zlib-api:
@@ -41,10 +29,10 @@ spack:
   - blitz:
     - blitz
   - applications_gromacs:
-    - gromacs@2026.0 ~mpi+openmp~plumed
+    - gromacs ~mpi+openmp~plumed
     - gsl +external-cblas
   - applications_namd:
-    - namd@3.0.2 +single_node_gpu interface=tcl
+    - namd +single_node_gpu interface=tcl
     - charmpp backend=multicore build-target=charm++
   - libraries_specific:
     - openblas  -ilp64 threads=openmp
@@ -53,7 +41,7 @@ spack:
     - cutensor
   - gpu_bin:
     - libxc ~cuda
-    - nccl@2.29.2-1    
+    - nccl   
   - all:
     - $libraries
     - $tools

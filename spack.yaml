@@ -1,7 +1,6 @@
 spack:
   include:
-  - cuda/packages.yaml
-  - lisa/packages.yaml
+  - packages.yaml
   - concretizer.yaml
   definitions:
   - current_compiler:
@@ -62,6 +61,8 @@ spack:
     - nvhpc
   - cuda_compiler:
     - cuda
+  - aocc_compiler:
+    - aocc +license-agreed
   - all: 
     - $autotools
     - $cmaketools
@@ -70,12 +71,14 @@ spack:
     - $assemblers
     - $common_tools  
     - $gcc_compiler
-    - $intel-oneapi-compilers
-    - $nvhpc_compiler
     - $zlib-api
   - out_of_matrix:
     - $system_externals
     - $cuda_compiler
+    - $intel-oneapi-compilers
+    - $nvhpc_compiler
+    - $aocc_compiler
+    - $internal_libraries
   specs:
   - matrix:
     - - $all

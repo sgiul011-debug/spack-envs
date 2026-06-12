@@ -23,7 +23,7 @@ spack:
     - llvm+clang +flang ~cuda ~offload ~libomptarget %c,cxx=gcc
   - binary_libraries:
     - intel-oneapi-mkl~cluster
-    - nag-library@27
+    - nag-library
   - java_tools:
     - maven
   - transfer_tools:
@@ -37,4 +37,4 @@ spack:
   - applications_star-ccm-plus:
     - star-ccm-plus
   - tools_idl:
-    - idl@8.5
+    - idl

@@ -57,9 +57,9 @@ spack:
   - gcc_compiler:
     - gcc
   - intel-oneapi-compilers:
-    - intel-oneapi-compilers@2025.3.2
+    - intel-oneapi-compilers
   - nvhpc_compiler:
-    - nvhpc@25.11
+    - nvhpc
   - cuda_compiler:
     - cuda
   - all: 

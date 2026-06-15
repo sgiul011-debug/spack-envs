@@ -1,4 +1,6 @@
 spack:
+  include:
+  - include.yaml
   definitions:
   - current_compiler:
     - gcc

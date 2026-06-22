@@ -18,6 +18,9 @@ spack:
   - applications_vasp:
     - vasp
     - wannier
+  - applications_yambo:
+    - yambo
+    - devicexlib
   - tools_scalasca:
     - otf2 
     - scalasca 
@@ -44,6 +47,7 @@ spack:
     - $libraries
     - $applications_quantum-espresso
     - $applications_vasp
+    - $applications_yambo
     - $tools_scalasca
     - $libraries_petsc
     - $libraries_specific

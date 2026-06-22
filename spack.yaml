@@ -2,89 +2,59 @@ spack:
   include:
   - include.yaml
   definitions:
-  - external:
-    - ucc
-    - ucx
-    - hwloc
-    - pmix
-  - current_compiler:
-    - 'gcc@15.2.0 ~bootstrap+nvptx'
+  - current_compiler: 
+  - 'nvhpc'
   - openssl:
-    - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
+    - openssl 
   - cuda:
-    - cuda@13.0.2
+    - cuda
   - zlib-api:
     - zlib-ng
-  - libraries:
-      - adios
-      - boost +container +mpi
-      - hdf5  +hl  
-      - netcdf-c +mpi +parallel-netcdf
-      - netcdf-fortran
-      - parallel-netcdf
-      - metis 
-      - parmetis  
-      - py-mpi4py
-      - cgal 
   - benchmarks:
-    - osu-micro-benchmarks ~xccl
+    - osu-micro-benchmarks
+  - applications_quantum-espresso:
+    - libxc ~cuda
+    - quantum-espresso
+  - applications_vasp:
+    - vasp
+    - wannier
+  - tools_scalasca:
+    #- otf2 
+    #- scalasca 
+    - scorep 
+  - hpcx-mpi:
+    - hpcx-mpi
+  - libraries:
+    - slepc 
+    - adios
+    - boost 
+    - hdf5  
+    - netcdf-c 
+    - netcdf-fortran 
+    - parallel-netcdf
+    - metis
+    - parmetis
   - libraries_petsc:
-    - petsc +mpi +mumps +scalapack +fftw #~superlu-dist
-      #- superlu-dist@9.2.1 +cuda
-  - applications_gromacs:
-    - gsl +external-cblas
-    - plumed@2.10.0
-    - gromacs@2026.0 +mpi+openmp+plumed
-  - applications_namd:
-    - namd@3.0.2 fftw=3
-    - charmpp backend=mpi  +smp +production +omp
-  - applications_cp2k:
-    - cp2k@2026.1 +mpi+plumed+openmp smm=blas lmax=6
-  - applications_nwchem:
-    - nwchem
-  - applications_nco:
-    - nco
+    - petsc 
   - libraries_specific:
-    - openmpi@4.1.6 +legacylaunchers schedulers=slurm +cuda ~wrapper-rpath ~static ~internal-pmix ~internal-hwloc ~internal-libevent fabrics=ucx,ucc,cma ~gpfs +lustre
     - netlib-scalapack
-    - openblas  -ilp64 threads=openmp
-    - fftw +mpi ~openmp
-  - gpu:
-    - elpa@2024.03.001 -openmp
-    - slate
-    - slepc
-  - tools_esmf:
-    - parallelio +pnetcdf
-    - esmf +external-lapack +pnetcdf
-  - applications_lammps:
-    - lammps +cuda_mps +kokkos fft_kokkos=cufft +diffraction +meam +ml-snap +ml-pace +reaction +reaxff +voronoi +yaff ~intel ~kim +asphere +class2 +kspace +manybody +molecule +extra-dump +opt +replica +rigid +granular +openmp-package +openmp
-    - kokkos +wrapper +cuda_constexpr +cuda_lambda +cuda_ldg_intrinsic +cuda_uvm +examples +tests 
-    - kokkos-nvcc-wrapper 
-    - voropp
-  - papi_tools:
-    - papi
-    - bc
-    - ed
-  - out_of_matrix:
-    - $openssl
-    - $cuda
-    - $zlib-api
-    - $external
-    - $applications_orca
+    - fftw
+    - openblas 
   - all:
     - $libraries
+    - $applications_quantum-espresso
+    - $applications_vasp
+    - $tools_scalasca
     - $libraries_petsc
-    - $benchmarks
-    - $applications_gromacs
-    - $applications_nwchem
-    - $applications_namd
-    - $applications_lammps
-    - $applications_nco
     - $libraries_specific
-    - $gpu
-    - $tools_esmf
-    - $papi_tools
-    - $applications_cp2k
+    - $benchmarks
+  - out_of_matrix:
+    - $openssl 
+    - $cuda 
+    - $hpcx-mpi
+    - $zlib-api
+    - papi 
+    - nccl
   specs:
   - matrix:
     - - $all
@@ -92,3 +62,7 @@ spack:
   - $out_of_matrix
   view: false
 
+
+
+ 
+  

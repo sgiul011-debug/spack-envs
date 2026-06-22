@@ -1,7 +1,6 @@
 spack:
   include:
-  - packages.yaml
-  - concretizer.yaml
+  - include.yaml
   definitions:
   - current_compiler:
     - gcc

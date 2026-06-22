@@ -19,8 +19,8 @@ spack:
     - vasp
     - wannier
   - tools_scalasca:
-    #- otf2 
-    #- scalasca 
+    - otf2 
+    - scalasca 
     - scorep 
   - hpcx-mpi:
     - hpcx-mpi

@@ -77,7 +77,7 @@ spack:
     - $intel-oneapi-compilers
     - $nvhpc_compiler
     - $aocc_compiler
-    - $internal_libraries
+    - $intel_libraries
   specs:
   - matrix:
     - - $all

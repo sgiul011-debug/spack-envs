@@ -16,7 +16,7 @@ spack:
   - zlib-api:
     - zlib-ng  
   - othertools:
-    - binutils +ld +gas -gold
+    - binutils 
     - git
     - perl
     - patchelf
@@ -46,7 +46,7 @@ spack:
   - intel_libraries:
     - intel-oneapi-ipp
     - intel-oneapi-tbb
-    - intel-oneapi-mkl+cluster
+    - intel-oneapi-mkl
     - intel-oneapi-mpi
     - intel-oneapi-inspector
     - intel-oneapi-advisor
@@ -61,7 +61,7 @@ spack:
   - cuda_compiler:
     - cuda
   - aocc_compiler:
-    - aocc +license-agreed
+    - aocc 
   - all: 
     - $autotools
     - $cmaketools

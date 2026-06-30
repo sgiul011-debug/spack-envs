@@ -4,24 +4,24 @@ spack:
   definitions:
   - current_compiler:
     - gcc
-  - openssl:
-    - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
-  - cuda:
-    - cuda
-  - zlib-api:
-    - zlib-ng
+  #- openssl:
+  #  - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
+  #- cuda:
+  #  - cuda
+  #- zlib-api:
+  #  - zlib-ng
   - ba_requirements:
     - tcl
     - environment-modules
-  - cmake_tools:
-    - cmake 
-  - python_tools:
-    - python
+  #- cmake_tools:
+  #  - cmake 
+  #- python_tools:
+  #  - python
   - compilers:
     - intel-oneapi-compilers-classic
     - llvm
   - binary_libraries:
-    - intel-oneapi-mkl~cluster
+  #- intel-oneapi-mkl~cluster
     - nag-library
   - java_tools:
     - maven

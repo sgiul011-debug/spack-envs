@@ -4,6 +4,8 @@ spack:
   definitions:  
   - current_compiler:
     - gcc
+  - cuda:
+    - cuda
   - advanced_gcc_compiler:
     - gcc
   - intel-oneapi-compilers:
@@ -13,6 +15,7 @@ spack:
   - all: 
     - $advanced_gcc_compiler
   - out_of_matrix:
+    - $cuda
     - $intel-oneapi-compilers
     - $nvhpc_compiler
   specs:

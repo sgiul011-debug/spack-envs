@@ -37,3 +37,21 @@ spack:
     - star-ccm-plus
   - tools_idl:
     - idl
+  - all:  
+    - $ba_requirements
+    - $singularity_tools
+   - out_of_matrix:
+    - $testing_tools 
+    - $compilers
+    - $transfer_tools
+    - $java_tools
+    - $binary_libraries
+    - $applications_star-ccm-plus
+    - $tools_idl
+  specs:
+  - matrix:
+    - - $all 
+    - - $%current_compiler
+  - $out_of_matrix
+  view: false
+

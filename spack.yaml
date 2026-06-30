@@ -11,7 +11,7 @@ spack:
   - nvhpc_compiler:
     - nvhpc
   - all: 
-    - $gcc_compiler
+    - $advanced_gcc_compiler
   - out_of_matrix:
     - $intel-oneapi-compilers
     - $nvhpc_compiler

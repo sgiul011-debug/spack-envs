@@ -1,7 +1,7 @@
 spack:
   include:
   - include.yaml
-  definitions:
+  definitions:  
   - current_compiler:
     - gcc
   - system_externals:

@@ -11,10 +11,10 @@ spack:
   #- zlib-api:
   #  - zlib-ng
   - libraries:
-    - boost +container
-    - hdf5 +cxx -mpi -threadsafe
+    - boost 
+    - hdf5 
     - metis
-    - netcdf-c -mpi
+    - netcdf-c 
     - netcdf-fortran
     - libszip
     - cgal  
@@ -24,25 +24,25 @@ spack:
     - hpctoolkit
   - tools:
     - proj
-    - gdal +python
-    - gmt +ffmpeg  ^json-c +ipo
+    - gdal 
+    - gmt 
     - cdo
     - eccodes
   - blitz:
     - blitz
   - applications_gromacs:
-    - gromacs ~mpi+openmp~plumed
-    - gsl +external-cblas
+    - gromacs 
+    - gsl 
   - applications_namd:
-    - namd +single_node_gpu interface=tcl
-    - charmpp backend=multicore build-target=charm++
+    - namd 
+    - charmpp 
   - libraries_specific:
-    - openblas  -ilp64 threads=openmp
-    - fftw -mpi
+    - openblas  
+    - fftw 
   - gpu_no_bin:
     - cutensor
   - gpu_bin:
-    - libxc ~cuda
+    - libxc 
     - nccl   
   - all:
     - $libraries

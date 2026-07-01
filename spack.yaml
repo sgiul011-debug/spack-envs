@@ -4,12 +4,12 @@ spack:
   definitions:
   - current_compiler:
     - 'gcc'
-  - cuda_compiler:
-    - cuda   
-  - openssl:
-    - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
-  - zlib-api:
-    - zlib-ng
+  #- cuda_compiler:
+  #  - cuda   
+  #- openssl:
+  # - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
+  #- zlib-api:
+  #  - zlib-ng
   - libraries:
     - boost +container
     - hdf5 +cxx -mpi -threadsafe
@@ -53,9 +53,9 @@ spack:
     - $libraries_specific
     - $gpu_bin
   - out_of_matrix:
-    - $cuda_compiler
-    - $openssl
-    - $zlib-api
+    #- $cuda_compiler
+    #- $openssl
+    #- $zlib-api
     - $gpu_no_bin
   specs:
   - matrix:

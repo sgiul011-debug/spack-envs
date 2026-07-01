@@ -52,14 +52,14 @@ spack:
     - intel-oneapi-advisor
     - intel-oneapi-itac
     - intel-oneapi-vtune
-  - gcc_compiler:
-    - gcc
-  - intel-oneapi-compilers:
-    - intel-oneapi-compilers
-  - nvhpc_compiler:
-    - nvhpc
-  - cuda_compiler:
-    - cuda
+  # - gcc_compiler:
+  #   - gcc
+  # - intel-oneapi-compilers:
+  #  - intel-oneapi-compilers
+  #- nvhpc_compiler:
+  #  - nvhpc
+  #- cuda_compiler:
+  #  - cuda
   - aocc_compiler:
     - aocc 
   - all: 
@@ -69,13 +69,13 @@ spack:
     - $utils
     - $assemblers
     - $common_tools  
-    - $gcc_compiler
+    #- $gcc_compiler
     - $zlib-api
   - out_of_matrix:
     - $system_externals
-    - $cuda_compiler
-    - $intel-oneapi-compilers
-    - $nvhpc_compiler
+    #- $cuda_compiler
+    #- $intel-oneapi-compilers
+    #- $nvhpc_compiler
     - $aocc_compiler
     - $intel_libraries
   specs:

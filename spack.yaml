@@ -18,9 +18,9 @@ spack:
   #  - zlib-ng
   - libraries:
       - adios
-      - boost +container +mpi
-      - hdf5  +hl  
-      - netcdf-c +mpi +parallel-netcdf
+      - boost 
+      - hdf5  
+      - netcdf-c 
       - netcdf-fortran
       - parallel-netcdf
       - metis 
@@ -28,38 +28,37 @@ spack:
       - py-mpi4py
       - cgal 
   - benchmarks:
-    - osu-micro-benchmarks ~xccl
+    - osu-micro-benchmarks 
   - libraries_petsc:
-    - petsc +mpi +mumps +scalapack +fftw #~superlu-dist
-      #- superlu-dist@9.2.1 +cuda
+    - petsc 
   - applications_gromacs:
-    - gsl +external-cblas
-    - plumed@2.10.0
-    - gromacs@2026.0 +mpi+openmp+plumed
+    - gsl 
+    - plumed
+    - gromacs
   - applications_namd:
-    - namd@3.0.2 fftw=3
-    - charmpp backend=mpi  +smp +production +omp
+    - namd
+    - charmpp 
   - applications_cp2k:
-    - cp2k@2026.1 +mpi+plumed+openmp smm=blas lmax=6
+    - cp2k
   - applications_nwchem:
     - nwchem
   - applications_nco:
     - nco
   - libraries_specific:
-    - openmpi@4.1.6 +legacylaunchers schedulers=slurm +cuda ~wrapper-rpath ~static ~internal-pmix ~internal-hwloc ~internal-libevent fabrics=ucx,ucc,cma ~gpfs +lustre
+    - openmpi
     - netlib-scalapack
-    - openblas  -ilp64 threads=openmp
-    - fftw +mpi ~openmp
+    - openblas  
+    - fftw 
   - gpu:
-    - elpa@2024.03.001 -openmp
+    - elpa
     - slate
     - slepc
   - tools_esmf:
-    - parallelio +pnetcdf
-    - esmf +external-lapack +pnetcdf
+    - parallelio 
+    - esmf 
   - applications_lammps:
-    - lammps +cuda_mps +kokkos fft_kokkos=cufft +diffraction +meam +ml-snap +ml-pace +reaction +reaxff +voronoi +yaff ~intel ~kim +asphere +class2 +kspace +manybody +molecule +extra-dump +opt +replica +rigid +granular +openmp-package +openmp
-    - kokkos +wrapper +cuda_constexpr +cuda_lambda +cuda_ldg_intrinsic +cuda_uvm +examples +tests 
+    - lammps 
+    - kokkos 
     - kokkos-nvcc-wrapper 
     - voropp
   - papi_tools:
@@ -71,7 +70,6 @@ spack:
     #- $cuda
     #- $zlib-api
     - $external
-    - $applications_orca
   - all:
     - $libraries
     - $libraries_petsc

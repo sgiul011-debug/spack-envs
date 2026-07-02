@@ -8,13 +8,14 @@ spack:
     - hwloc
     - pmix
   - current_compiler:
-    - 'gcc@15.2.0 ~bootstrap+nvptx'
-  - openssl:
-    - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
-  - cuda:
-    - cuda@13.0.2
-  - zlib-api:
-    - zlib-ng
+    #- 'gcc@15.2.0 ~bootstrap+nvptx'
+    - gcc
+  #- openssl:
+  #  - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
+  #- cuda:
+  #  - cuda@13.0.2
+  #- zlib-api:
+  #  - zlib-ng
   - libraries:
       - adios
       - boost +container +mpi
@@ -66,9 +67,9 @@ spack:
     - bc
     - ed
   - out_of_matrix:
-    - $openssl
-    - $cuda
-    - $zlib-api
+    #- $openssl
+    #- $cuda
+    #- $zlib-api
     - $external
     - $applications_orca
   - all:

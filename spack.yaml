@@ -4,12 +4,12 @@ spack:
   definitions:
   - current_compiler: 
   - 'nvhpc'
-  - openssl:
-    - openssl 
-  - cuda:
-    - cuda
-  - zlib-api:
-    - zlib-ng
+  #- openssl:
+  #  - openssl 
+  #- cuda:
+  #  - cuda
+  #- zlib-api:
+  #  - zlib-ng
   - benchmarks:
     - osu-micro-benchmarks
   - applications_quantum-espresso:

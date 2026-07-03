@@ -49,10 +49,10 @@ spack:
     - $libraries_specific
     - $benchmarks
   - out_of_matrix:
-    - $openssl 
-    - $cuda 
+    #- $openssl 
+    #- $cuda 
     - $hpcx-mpi
-    - $zlib-api
+    #- $zlib-api
     - papi 
     - nccl
   specs:

@@ -3,7 +3,7 @@ spack:
   - include.yaml
   definitions:
   - current_compiler: 
-  - 'nvhpc'
+    - 'nvhpc'
   #- openssl:
   #  - openssl 
   #- cuda:
@@ -13,7 +13,7 @@ spack:
   - benchmarks:
     - osu-micro-benchmarks
   - applications_quantum-espresso:
-    - libxc ~cuda
+    - libxc 
     - quantum-espresso
   - applications_vasp:
     - vasp

@@ -16,8 +16,8 @@ spack:
     - libxc 
     - quantum-espresso
   - applications_vasp:
-    - vasp
-    - wannier
+    - vasp 
+    - wannier90 
   - tools_scalasca:
     - otf2 
     - scalasca 
@@ -55,6 +55,7 @@ spack:
     #- $zlib-api
     - papi 
     - nccl
+    - rsync
   specs:
   - matrix:
     - - $all

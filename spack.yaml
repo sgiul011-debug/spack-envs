@@ -43,15 +43,15 @@ spack:
     - emacs
     - curl
     - gdbm    
-  - intel_libraries:
-    - intel-oneapi-ipp
-    - intel-oneapi-tbb
-    - intel-oneapi-mkl
-    - intel-oneapi-mpi
-    - intel-oneapi-inspector
-    - intel-oneapi-advisor
-    - intel-oneapi-itac
-    - intel-oneapi-vtune
+  #- intel_libraries:
+  #  - intel-oneapi-ipp
+  #  - intel-oneapi-tbb
+  #  - intel-oneapi-mkl
+  #  - intel-oneapi-mpi
+  #  - intel-oneapi-inspector
+  #  - intel-oneapi-advisor
+  #  - intel-oneapi-itac
+  #  - intel-oneapi-vtune
   # - gcc_compiler:
   #   - gcc
   # - intel-oneapi-compilers:
@@ -60,8 +60,8 @@ spack:
   #  - nvhpc
   #- cuda_compiler:
   #  - cuda
-  - aocc_compiler:
-    - aocc 
+  #- aocc_compiler:
+  #  - aocc 
   - all: 
     - $autotools
     - $cmaketools
@@ -76,8 +76,8 @@ spack:
     #- $cuda_compiler
     #- $intel-oneapi-compilers
     #- $nvhpc_compiler
-    - $aocc_compiler
-    - $intel_libraries
+    #- $aocc_compiler
+    #- $intel_libraries
   specs:
   - matrix:
     - - $all

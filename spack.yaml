@@ -1,57 +1,57 @@
 spack:
   include:
-  - include.yaml
-  definitions:
-  - current_compiler:
-    - gcc
-  #- openssl:
-  #  - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
-  #- cuda:
-  #  - cuda
-  #- zlib-api:
-  #  - zlib-ng
-  - ba_requirements:
-    - tcl
-    - environment-modules
-  #- cmake_tools:
-  #  - cmake 
-  #- python_tools:
-  #  - python
-  - compilers:
-    - intel-oneapi-compilers-classic
-    - llvm
-  - binary_libraries:
-  #- intel-oneapi-mkl~cluster
-    - nag-library
-  - java_tools:
-    - maven
-  - transfer_tools:
-    - ncftp
-  - singularity_tools:
-    - singularityce
-  - testing_tools:
-    - jube
-    - py-ruamel-yaml
-    - snakemake
-  - applications_star-ccm-plus:
-    - star-ccm-plus
-  - tools_idl:
-    - idl
-  - all:  
-    - $ba_requirements
-    - $singularity_tools
-   - out_of_matrix:
-    - $testing_tools 
-    - $compilers
-    - $transfer_tools
-    - $java_tools
-    - $binary_libraries
-    - $applications_star-ccm-plus
-    - $tools_idl
+    - include.yaml
+  definitions:
+    - current_compiler:
+      - gcc
+    - ba_requirements:
+      - tcl
+      - environment-modules
+    - compilers:
+      - intel-oneapi-compilers
+      - nvhpc
+      - aocc
+      - llvm
+    - intel_libraries:
+      - intel-oneapi-ipp
+      - intel-oneapi-tbb
+      - intel-oneapi-mkl
+      - intel-oneapi-mpi
+      - intel-oneapi-inspector
+      - intel-oneapi-advisor
+      - intel-oneapi-itac
+      - intel-oneapi-vtune
+    - binary_libraries:
+      - nag-library
+    - java_tools:
+      - maven
+    - transfer_tools:
+      - ncftp
+    - singularity_tools:
+      - singularityce
+    - testing_tools:
+      - jube
+      - py-ruamel-yaml
+      - snakemake
+    - applications_star-ccm-plus:
+      - star-ccm-plus
+    - tools_idl:
+      - idl
+    - all:
+      - $ba_requirements
+      - $singularity_tools
+    - out_of_matrix:
+      - $testing_tools
+      - $compilers
+      - $intel_libraries
+      - $transfer_tools
+      - $java_tools
+      - $binary_libraries
+      - $applications_star-ccm-plus
+      - $tools_idl
   specs:
-  - matrix:
-    - - $all 
-    - - $%current_compiler
-  - $out_of_matrix
+    - matrix:
+      - - $all
+      - - $%current_compiler
+    - $out_of_matrix
   view: false
-

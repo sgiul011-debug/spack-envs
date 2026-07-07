@@ -2,13 +2,15 @@ spack:
   include:
   - include.yaml
   definitions:
-  - current_compiler:
+  - current_compiler_gcc:
     - gcc
-  - ai_pillars_outofmatrix_llvmbased:
-    - py-jaxlib
-    - py-jax  
+  - current_compiler_llvm:
+    - llvm
+  - ai_pillars_llvmbased:
+    - py-jaxlib  
   - ai_pillars_outofmatrix:
     - py-dask
+    - py-jax
   - ai_pillars_inmatrix:
     - py-ray
     - py-torch
@@ -47,17 +49,22 @@ spack:
     #- py-scipy
     - py-torchaudio
     - py-torchvision
-  - all:
+  - all_gcc:
     - $ai_pillars_inmatrix
     - $ai_secondary
+  - all_llvm:
+    - $ai_pillars_llvmbased
   - out_of_matrix:
     - $ai_pillars_outofmatrix_llvmbased
     - $ai_pillars_outofmatrix
     #- $ai_secondary_outofmatrix
   specs:
   - matrix:
-    - - $all
-    - - $%current_compiler
+    - - $all_gcc
+    - - $%current_compiler_gcc
+  - matrix: 
+    - - $all_llvm
+    - - $%current_compiler_llvm
   - $out_of_matrix
   view: false
 

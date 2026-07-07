@@ -2,88 +2,60 @@ spack:
   include:
   - include.yaml
   definitions:
-  - external:
-    - ucc
-    - ucx
-    - hwloc
-    - pmix
   - current_compiler:
-    #- 'gcc@15.2.0 ~bootstrap+nvptx'
     - gcc
-  #- openssl:
-  #  - 'openssl@3.2.2 build_system=generic certs=mozilla ~docs +shared'
-  #- cuda:
-  #  - cuda@13.0.2
-  #- zlib-api:
-  #  - zlib-ng
-  - libraries:
-      - adios
-      - boost 
-      - hdf5  
-      - netcdf-c 
-      - netcdf-fortran
-      - parallel-netcdf
-      - metis 
-      - parmetis  
-      - py-mpi4py
-      - cgal 
-  - benchmarks:
-    - osu-micro-benchmarks 
-  - libraries_petsc:
-    - petsc 
-  - applications_gromacs:
-    - gsl 
-    - plumed
-    - gromacs
-  - applications_namd:
-    - namd
-    - charmpp 
-  - applications_cp2k:
-    - cp2k
-  - applications_nwchem:
-    - nwchem
-  - applications_nco:
-    - nco
-  - libraries_specific:
-    - openmpi
-    - netlib-scalapack
-    - openblas  
-    - fftw 
-  - gpu:
-    - elpa
-    - slate
-    - slepc
-  - tools_esmf:
-    - parallelio 
-    - esmf 
-  - applications_lammps:
-    - lammps 
-    - kokkos 
-    - kokkos-nvcc-wrapper 
-    - voropp
-  - papi_tools:
-    - papi
-    - bc
-    - ed
-  - out_of_matrix:
-    #- $openssl
-    #- $cuda
-    #- $zlib-api
-    - $external
+  - python:
+    - py-jax
+  - ai_pillars_outofmatrix_llvmbased:
+    - py-jaxlib
+    - py-jax  
+  - ai_pillars_outofmatrix:
+    - py-dask
+  - ai_pillars_inmatrix:
+    - py-ray
+    - py-torch
+  - ai_secondary_outofmatrix:
+    - py-click
+    - py-cloudpickle
+    - py-cryptography
+    - py-fsspec
+    - py-ipykernel
+    - py-joblib
+    - py-jsonlines
+    - py-jupyterlab
+    - py-mlflow
+    - py-notebook
+    - py-omegaconf
+    - py-prometheus-client
+    - py-pytest
+    - py-python-dotenv
+    - py-pytorch-lightning
+    - py-tensorboard
+    - py-threadpoolctl
+    - py-torchmetrics
+    - py-typer
+    - py-urllib3
+    - py-uvicorn
+    - py-wandb
+    - py-xgboost
+  - ai_secondary:
+    #- py-h5py
+    #- py-matplotlib
+    - py-msgpack
+    #- py-numpy
+    # - py-orjson
+    #- py-pandas
+    #- py-scikit-learn
+    #- py-scipy
+    - py-torchaudio
+    - py-torchvision
   - all:
-    - $libraries
-    - $libraries_petsc
-    - $benchmarks
-    - $applications_gromacs
-    - $applications_nwchem
-    - $applications_namd
-    - $applications_lammps
-    - $applications_nco
-    - $libraries_specific
-    - $gpu
-    - $tools_esmf
-    - $papi_tools
-    - $applications_cp2k
+    - $ai_pillars_inmatrix
+    - $ai_secondary
+  - out_of_matrix:
+    - $ai_pillars_outofmatrix_llvmbased
+    - $ai_pillars_outofmatrix
+    #- $ai_secondary_outofmatrix
   specs:
   - matrix:
     - - $all

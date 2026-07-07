@@ -27,6 +27,7 @@ spack:
       - maven
     - transfer_tools:
       - ncftp
+      - rsync
     - singularity_tools:
       - singularityce
     - testing_tools:

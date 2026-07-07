@@ -4,8 +4,6 @@ spack:
   definitions:
   - current_compiler:
     - gcc
-  - python:
-    - py-jax
   - ai_pillars_outofmatrix_llvmbased:
     - py-jaxlib
     - py-jax  

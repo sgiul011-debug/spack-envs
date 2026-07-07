@@ -6,12 +6,12 @@ spack:
     - gcc
   - current_compiler_llvm:
     - llvm
-  - ai_pillars_llvmbased:
+  - ai_pillars_inmatrix_llvm:
     - py-jaxlib  
   - ai_pillars_outofmatrix:
     - py-dask
     - py-jax
-  - ai_pillars_inmatrix:
+  - ai_pillars_inmatrix_gcc:
     - py-ray
     - py-torch
   - ai_secondary_outofmatrix:
@@ -38,7 +38,7 @@ spack:
     - py-uvicorn
     - py-wandb
     - py-xgboost
-  - ai_secondary:
+  - ai_secondary_inmatrix_gcc:
     #- py-h5py
     #- py-matplotlib
     - py-msgpack
@@ -50,12 +50,11 @@ spack:
     - py-torchaudio
     - py-torchvision
   - all_gcc:
-    - $ai_pillars_inmatrix
-    - $ai_secondary
+    - $ai_pillars_inmatrix_gcc
+    - $ai_secondary_inmatrix_gcc
   - all_llvm:
-    - $ai_pillars_llvmbased
+    - $ai_pillars_inmatrix_llvm
   - out_of_matrix:
-    - $ai_pillars_outofmatrix_llvmbased
     - $ai_pillars_outofmatrix
     #- $ai_secondary_outofmatrix
   specs:

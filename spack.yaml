@@ -8,8 +8,8 @@ spack:
       - tcl
       - environment-modules
     - compilers:
-      - intel-oneapi-compilers
-      - nvhpc
+      #- intel-oneapi-compilers
+      #- nvhpc
       - aocc
       - llvm
     - intel_libraries:

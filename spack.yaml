@@ -39,9 +39,9 @@ spack:
     - py-wandb
     - py-xgboost
   - ai_secondary_inmatrix_gcc:
-    #- py-h5py
+    - py-h5py
     #- py-matplotlib
-    - py-msgpack
+    #- py-msgpack
     #- py-numpy
     # - py-orjson
     #- py-pandas
@@ -56,7 +56,7 @@ spack:
     - $ai_pillars_inmatrix_llvm
   - out_of_matrix:
     - $ai_pillars_outofmatrix
-    #- $ai_secondary_outofmatrix
+    - $ai_secondary_outofmatrix
   specs:
   - matrix:
     - - $all_gcc

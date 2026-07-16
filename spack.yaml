@@ -8,9 +8,9 @@ spack:
     - llvm
   - ai_pillars_inmatrix_llvm:
     - py-jaxlib  
+    - py-jax
   - ai_pillars_outofmatrix:
     - py-dask
-    - py-jax
   - ai_pillars_inmatrix_gcc:
     - py-ray
     - py-torch

@@ -1,0 +1,3 @@
+upstreams: 
+  upstream-ai-base:
+    install_tree: $SPACK_DEPLOY/$SPACK_DEPLOY_INSTANCE/install_ai_base
